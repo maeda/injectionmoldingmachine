@@ -3,6 +3,7 @@
 #include <Display.h>
 
 Display::Display(){
+    Serial.println("Initializing Display");
     _lcd = new LiquidCrystal_I2C(0x27,2,1,0,4,5,6,7,3, POSITIVE);
     _lcd->begin (16,2);
     _lcd->setBacklight(HIGH);

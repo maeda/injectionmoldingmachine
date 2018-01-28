@@ -3,11 +3,7 @@
 class TemperatureControl {
     public:
         TemperatureControl(int increasePort, int decreasePort, int initialTemperature);
-        int read(){
-            increaseButton(digitalRead(_increasePort));
-            decreaseButton(digitalRead(_decreasePort));
-            return _initialTemperature;
-        };
+        int read();
     private:
         int _increasePort;
         int _decreasePort;

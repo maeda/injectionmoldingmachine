@@ -2,12 +2,14 @@
 #include <Relay.h>
 
 Relay::Relay(int port){
+    Serial.println("Initializing Relay");
     _port = port;
     _delay = 0.0;
     pinMode(_port, OUTPUT);
 }
 
 Relay::Relay(int port, double delay){
+    Serial.println("Initializing Relay");
     _port = port;
     _delay = delay;
     pinMode(_port, OUTPUT);

@@ -1,4 +1,4 @@
-#include <Arduino.h>
+// #include <Arduino.h>
 #include <custom_struct.h>
 #include <LiquidCrystal_I2C.h>
 

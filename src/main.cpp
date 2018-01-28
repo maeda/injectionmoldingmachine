@@ -6,15 +6,20 @@
 #include <Relay.h>
 #include <Sensor.h>
 
-
-Display *display = new Display();
-TemperatureControl *temperatureControl = new TemperatureControl(2, 3, 100);
-Relay *relay = new Relay(8, 0.05);
-Sensor *sensor = new Sensor(10, 12, 13);
+Display *display;
+TemperatureControl *temperatureControl;
+Relay *relay;
+Sensor *sensor;
 
 void setup()
 {
     Serial.begin(9600);
+    Serial.println("Starting...");
+    temperatureControl = new TemperatureControl(2, 3, 200);
+    relay = new Relay(8, 0.05);
+    sensor = new Sensor(10, 12, 13, 500);
+    display = new Display();
+    Serial.println("Initialized");
 }
 
 void loop()
@@ -26,5 +31,5 @@ void loop()
     display->print(data);
     relay->trigger(data);
 
-    delay(500);
+    delay(100);
 }
