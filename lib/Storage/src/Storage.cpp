@@ -3,19 +3,19 @@
 #include <EEPROMAnything.h>
 
 Storage::Storage(){
-    _currentTemperature = read();
+    _currentMaxTemperature = read();
 }
 
-void Storage::save(temperature data){
-    if (_currentTemperature.max == data.max) {
+void Storage::save(int maxTemperature){
+    if (_currentMaxTemperature == maxTemperature) {
         return;
     }
-    _currentTemperature = data;
-    EEPROM_writeAnything(0, _currentTemperature);
+    _currentMaxTemperature = maxTemperature;
+    EEPROM_writeAnything(0, _currentMaxTemperature);
 }
 
-temperature Storage::read() {
-    temperature data;
-    EEPROM_readAnything(0, data);
-    return data;
+int Storage::read() {
+    int maxTemperature;
+    EEPROM_readAnything(0, maxTemperature);
+    return maxTemperature;
 }

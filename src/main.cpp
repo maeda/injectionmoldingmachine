@@ -33,7 +33,7 @@ void loop()
 
     display->print(data);
     relay->trigger(data);
-    storage->save(data);
+    storage->save(data.max);
 
     delay(100);
 }

@@ -5,8 +5,8 @@
 class Storage {
     public:
         Storage();
-        void save(temperature data);
-        temperature read();
+        void save(int maxTemperature);
+        int read();
     private:
-        temperature _currentTemperature;
+        int _currentMaxTemperature;
 };
