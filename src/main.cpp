@@ -5,11 +5,13 @@
 #include <TemperatureControl.h>
 #include <Relay.h>
 #include <Sensor.h>
+#include <Storage.h>
 
 Display *display;
 TemperatureControl *temperatureControl;
 Relay *relay;
 Sensor *sensor;
+Storage *storage;
 
 void setup()
 {
@@ -19,6 +21,7 @@ void setup()
     relay = new Relay(8, 0.05);
     sensor = new Sensor(10, 12, 13, 500);
     display = new Display();
+    storage = new Storage();
     Serial.println("Initialized");
 }
 
@@ -30,6 +33,7 @@ void loop()
 
     display->print(data);
     relay->trigger(data);
+    storage->save(data);
 
     delay(100);
 }
