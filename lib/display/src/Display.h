@@ -1,11 +1,13 @@
 // #include <Arduino.h>
 #include <custom_struct.h>
-#include <LiquidCrystal_I2C.h>
+#include <SPI.h>
+#include <Wire.h>
+#include <SSD1306Wire.h>
 
 class Display {
     public:
         Display();
         void print(temperature data);
     private:
-        LiquidCrystal_I2C* _lcd;
+        SSD1306Wire* _lcd;
 };

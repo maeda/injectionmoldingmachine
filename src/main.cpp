@@ -17,11 +17,11 @@ void setup()
 {
     Serial.begin(9600);
     Serial.println("Starting...");
-    temperatureControl = new TemperatureControl(2, 3, 200, 100, 300);
     relay = new Relay(8, 0.05);
     sensor = new Sensor(10, 12, 13, 500);
     display = new Display();
     storage = new Storage();
+    temperatureControl = new TemperatureControl(2, 3, storage->read(), 100, 300);
     Serial.println("Initialized");
 }
 
