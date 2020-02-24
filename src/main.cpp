@@ -21,7 +21,7 @@ void setup()
     sensor = new Sensor(10, 12, 13, 500);
     display = new Display();
     storage = new Storage();
-    temperatureControl = new TemperatureControl(2, 3, storage->read(), 100, 300);
+    temperatureControl = new TemperatureControl(2, 3, storage->read(), 0, 300);
     Serial.println("Initialized");
 }
 
